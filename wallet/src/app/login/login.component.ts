@@ -18,13 +18,14 @@ export class LoginComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService) {   }
+    private authenticationService: AuthenticationService) {
+  }
 
   ngOnInit() {
   }
 
   handleLogin() {
-    this.authenticationService.authenticationService(this.username, this.password).subscribe((result)=> {
+    this.authenticationService.authenticationService(this.username, this.password).subscribe(() => {
       this.invalidLogin = false;
       this.loginSuccess = true;
       this.successMessage = 'Login Successful.';
@@ -34,5 +35,4 @@ export class LoginComponent {
       this.loginSuccess = false;
     });
   }
-}
 }

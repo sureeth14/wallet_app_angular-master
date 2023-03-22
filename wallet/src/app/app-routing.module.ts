@@ -6,6 +6,7 @@ import {CreateWalletComponent} from "./create-wallet/create-wallet.component";
 import {UpdateWalletComponent} from "./update-wallet/update-wallet.component";
 import {AddFundsComponent} from "./add-funds/add-funds.component";
 import {FundTransferComponent} from "./fund-transfer/fund-transfer.component";
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
   {path: 'view',component: WalletListComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'create',component:CreateWalletComponent},
   {path: 'update-wallet/:id',component:UpdateWalletComponent},
   {path: 'wallet/:id/:amount', component: AddFundsComponent },
-  {path: 'wallet/fund/:fromId/:toId/:amount',component:FundTransferComponent}
+  {path: 'wallet/fund/:fromId/:toId/:amount',component:FundTransferComponent},
+  {path: 'login',component:LoginComponent}
 ];
 
 @NgModule({
