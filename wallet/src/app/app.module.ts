@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import { UpdateWalletComponent } from './update-wallet/update-wallet.component';
 import { AddFundsComponent } from './add-funds/add-funds.component';
 import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
+import { WithdrawFundsComponent } from './withdraw-funds/withdraw-funds.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
     CreateWalletComponent,
     UpdateWalletComponent,
     AddFundsComponent,
-    FundTransferComponent
+    FundTransferComponent,
+    WithdrawFundsComponent
   ],
   imports: [
     BrowserModule,

@@ -62,4 +62,8 @@ export class WalletListComponent implements OnInit {
         console.log(error);
       });
   }
+
+  fundTransfer(id: number) {
+    
+  }
 }

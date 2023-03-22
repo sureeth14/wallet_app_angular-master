@@ -7,11 +7,13 @@ import {Wallet} from "./wallet";
   providedIn: 'root'
 })
 export class WalletService {
+
   constructor(private httpClient: HttpClient) {}
 
     id?:number;
 
 
+    private apiUrl = "http://localhost:8080/wallet/fund";
     private baseUrl = 'http://localhost:8080/wallet/{id}/{amount}';
     private deleteURL = "http://localhost:8080/wallet";
 
@@ -49,5 +51,9 @@ export class WalletService {
     return this.httpClient.patch<number>('http://localhost:8080/wallet/{id}/{amount}',null);
   }
 
+  transferFunds(fromWalletId: number | undefined, toWalletId: number | undefined, amount: number | undefined): Observable<boolean> {
+    const url = `${this.apiUrl}/wallet/fund/${fromWalletId}/${toWalletId}/${amount}`;
+    return this.httpClient.post<boolean>(url, null);
+  }
 }
 
