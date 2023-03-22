@@ -17,6 +17,7 @@ import { UpdateWalletComponent } from './update-wallet/update-wallet.component';
 import { AddFundsComponent } from './add-funds/add-funds.component';
 import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
 import { WithdrawFundsComponent } from './withdraw-funds/withdraw-funds.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { WithdrawFundsComponent } from './withdraw-funds/withdraw-funds.componen
     UpdateWalletComponent,
     AddFundsComponent,
     FundTransferComponent,
-    WithdrawFundsComponent
+    WithdrawFundsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

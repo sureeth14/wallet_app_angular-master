@@ -55,5 +55,10 @@ export class WalletService {
     const url = `${this.apiUrl}/wallet/fund/${fromWalletId}/${toWalletId}/${amount}`;
     return this.httpClient.post<boolean>(url, null);
   }
+
+  withdrawFunds(walletId: number, amount: number) {
+    const url = `wallet/${walletId}/fund/${amount}`;
+    return this.httpClient.patch<number>(url, null);
+  }
 }
 

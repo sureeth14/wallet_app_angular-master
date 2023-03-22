@@ -64,6 +64,10 @@ export class WalletListComponent implements OnInit {
   }
 
   fundTransfer(id: number) {
+
+  }
+
+  withdrawFunds(id: number) {
     
   }
 }
