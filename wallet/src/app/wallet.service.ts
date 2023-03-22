@@ -12,6 +12,7 @@ export class WalletService {
     id?:number;
 
 
+    private baseUrl = 'http://localhost:8080/wallet/{id}/{amount}';
     private deleteURL = "http://localhost:8080/wallet";
 
     private getURL = "http://localhost:8080/wallet/{id}";
@@ -42,6 +43,11 @@ export class WalletService {
     return this.httpClient.delete(`${this.deleteURL}/${id}`);
   }
 
+
+  addFundsToWalletById(walletId: number | undefined, amount: number | undefined): Observable<number> {
+    const url = `${this.baseUrl}/wallet/${walletId}/${amount}`;
+    return this.httpClient.patch<number>(url, null);
+  }
 
 }
 

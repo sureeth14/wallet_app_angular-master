@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateWalletComponent } from './create-wallet/create-wallet.component';
 import {FormsModule} from "@angular/forms";
 import { UpdateWalletComponent } from './update-wallet/update-wallet.component';
+import { AddFundsComponent } from './add-funds/add-funds.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UpdateWalletComponent } from './update-wallet/update-wallet.component';
     WalletListComponent,
     HomeComponent,
     CreateWalletComponent,
-    UpdateWalletComponent
+    UpdateWalletComponent,
+    AddFundsComponent
   ],
   imports: [
     BrowserModule,
