@@ -9,4 +9,7 @@ export class AuthService {
 }
 
 export class AuthenticationService {
+  authenticationService(username: string | undefined, password: string | undefined) {
+    
+  }
 }
