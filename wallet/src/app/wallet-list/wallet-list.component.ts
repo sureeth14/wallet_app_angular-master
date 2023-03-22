@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 
 export class WalletListComponent implements OnInit {
 
-   wallets?: Wallet[];
+   wallets?: Wallet[] = [];
   constructor(private walletService: WalletService , private router: Router) {}
   ngOnInit():void {
     this.getWalletList();
@@ -43,4 +43,23 @@ export class WalletListComponent implements OnInit {
     this.router.navigate(['update-wallet',wallet?.id]);
   }
 
+  addFundsToWallet(walletId?: number) {
+    const amount = parseFloat(prompt('Enter amount to add to wallet') || '0');
+    this.walletService.addFundsToWalletById(walletId, amount)
+      .subscribe((result: number) => {
+        console.log(`Added ${amount} to wallet with ID ${walletId}`);
+        this.loadWallets();
+      }, (error: any) => {
+        console.log(error);
+      });
+  }
+
+  loadWallets() {
+    this.walletService.getWalletList()
+      .subscribe((data: Wallet[]) => {
+        this.wallets = data;
+      }, (error: any) => {
+        console.log(error);
+      });
+  }
 }

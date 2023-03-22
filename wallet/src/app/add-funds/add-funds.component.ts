@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {WalletService} from "../wallet.service";
+import {Wallet} from "../wallet";
 
 @Component({
   selector: 'app-add-funds',
@@ -11,9 +12,11 @@ export class AddFundsComponent implements OnInit {
 
   walletId?: number;
   amount?: number;
+  wallets: Wallet[] = [];
   constructor(private route:ActivatedRoute,private walletService:WalletService) {}
 
-  ngOnInit() {
+  ngOnInit() :void {
+    this.loadWallets();
     this.route.paramMap.subscribe(params => {
       this.walletId = parseInt(<string>params.get('id'));
       this.amount = parseFloat(<string>params.get('amount'));
@@ -29,4 +32,14 @@ export class AddFundsComponent implements OnInit {
         console.log(error);
       });
   }
+
+  loadWallets() {
+    this.walletService.getWalletList()
+      .subscribe((data: Wallet[]) => {
+        this.wallets = data;
+      }, (error: any) => {
+        console.log(error);
+      });
+  }
+
 }

@@ -6,6 +6,7 @@
     <th scope="col"> Name    </th>
     <th scope="col"> Balance </th>
     <th scope="col"> Actions </th>
+<!--    <th scope="col"> Add Funds </th>-->
   </tr>
   </thead>
 
@@ -17,6 +18,10 @@
    <td>
      <input type="button" class="btn btn-info" (click)="updateWallet(wallet)" value="Update" >
      <button class="btn btn-danger" style="margin-left: 10px" (click)="deleteWallet(wallet.id)"  > Delete </button>
+   </td>
+
+   <td>
+     <button class="btn btn-success" (click)="addFundsToWallet(wallet.id)">Add Funds</button>
    </td>
 
  </tr>

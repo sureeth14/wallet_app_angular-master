@@ -44,9 +44,9 @@ export class WalletService {
   }
 
 
-  addFundsToWalletById(walletId: number | undefined, amount: number | undefined): Observable<number> {
-    const url = `${this.baseUrl}/wallet/${walletId}/${amount}`;
-    return this.httpClient.patch<number>(url, null);
+  addFundsToWalletById(walletId: number | undefined, amount: number | undefined): Observable<any> {
+    // const url = `${this.baseUrl}/wallet/${walletId}/${amount}`;
+    return this.httpClient.patch<number>('http://localhost:8080/wallet/{id}/{amount}',null);
   }
 
 }
