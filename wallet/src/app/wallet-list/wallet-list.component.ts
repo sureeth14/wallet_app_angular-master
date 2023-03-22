@@ -68,6 +68,6 @@ export class WalletListComponent implements OnInit {
   }
 
   withdrawFunds(id: number) {
-    
+
   }
 }
